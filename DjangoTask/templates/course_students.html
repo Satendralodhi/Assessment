@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>title</title>
+  </head>
+  <body>
+    <h1 align="center">Detail of Course</h1>
+    {% if course%}
+    <table
+      border="1px"
+      width="60%"
+      cellpadding="10px"
+      bgcolor="gray"
+      align="center"
+      length="90%"
+    >
+      <tr>
+        <th>NAME</th>
+        <th>description</th>
+        <th>instructor</th>
+        <th>start_date</th>
+        <th>end_date</th>
+      </tr>
+      {% for i in course %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.instructor}}</td>
+        <td>{{i.start_date}}</td>
+        <td>{{i.end_date}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h1 align="center">Detail of Students</h1>
+    <table
+      border="1px"
+      width="60%"
+      cellpadding="10px"
+      bgcolor="gray"
+      align="center"
+      length="90%"
+    >
+      <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>EMAIL</th>
+        <th>DATE JOINED</th>
+      </tr>
+
+      {% for i in students %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.date_joined}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+  </body>
+</html>
